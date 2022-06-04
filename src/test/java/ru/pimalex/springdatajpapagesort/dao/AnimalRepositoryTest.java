@@ -14,6 +14,14 @@ import ru.pimalex.springdatajpapagesort.model.Category;
 import java.util.Arrays;
 import java.util.List;
 
+/* Для постраничного вывода элементов в параметр метода передается объект Pageable.
+ * Он содержит информацию о номере запрашиваемой страницы и о количестве элементов на странице.
+ * Страницы нумеруются с нуля. Ниже показан запрос первой страницы, на каждой странице два элемента:
+ * Pageable firstPageWithTwoElements = PageRequest.of(0, 2);
+ *
+ * В объекте Pageable можно задать заодно и сортировку. Так что элементы и сортируются, и выдаются
+ * постранично. Для этого используем третий параметр — Sort:
+ * PageRequest.of(0, 2, Sort.by("name").descending());*/
 @DataJpaTest
 class AnimalRepositoryTest {
     public static long HOME_ID = -3;

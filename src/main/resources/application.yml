@@ -1,3 +1,6 @@
+server:
+  port=8080
+
 spring:
   h2:
     console:
@@ -11,7 +14,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-#      ddl-auto: create
+    #      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
