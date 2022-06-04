@@ -16,6 +16,7 @@ public class Animal {
     private long id;
     private String name;
 
+    /*Эта аннотация создаст в таблице Animal солонку category_id для связи таблиц*/
     @ManyToOne
     private Category category;
 }
