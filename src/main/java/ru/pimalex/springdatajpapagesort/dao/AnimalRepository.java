@@ -15,7 +15,16 @@ import java.util.List;
  *
  * В объекте Pageable можно задать заодно и сортировку. Так что элементы и сортируются, и выдаются
  * постранично. Для этого используем третий параметр — Sort:
- * PageRequest.of(0, 2, Sort.by("name").descending());*/
+ * PageRequest.of(0, 2, Sort.by("name").descending());
+ *
+ * Как видно, во всех методах есть параметр Pageable — запрос страницы.
+ * При этом:
+ *
+ * Производные от имени запросы работают.
+ * Возвращать можно как List, так и Page.
+ * Работают @Query с JPQL.
+ * Работают нативные @Query.
+ * @Query могут быть сложные, с группировкой.*/
 public interface AnimalRepository extends JpaRepository<Animal, Long>, CustomAnimalRepository {
 
     List<Animal> findAllByNameContaining(String str, Pageable pageable);
